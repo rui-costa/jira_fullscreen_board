@@ -6,7 +6,7 @@
         {
           "matches": ["https://*.atlassian.net/secure/RapidBoard.jspa*"],
           "run_at": "document_end",
-          "js": ["code.js"]
+          "js": ["extension.js"]
         }
       ],
     "permissions": [
