@@ -8,8 +8,5 @@
           "run_at": "document_end",
           "js": ["extension.js"]
         }
-      ],
-    "permissions": [
-        "activeTab"
       ]
   }
