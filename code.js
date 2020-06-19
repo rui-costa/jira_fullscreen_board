@@ -36,7 +36,7 @@ function toogle_fs(){
         document.getElementById("content").style.marginRight = "";
         document.getElementById("ghx-quick-filters").style.marginBottom = "";
         document.getElementById("ghx-work").style.height = h_board;
-        button_fs.innerHTML = '<span class="material-icons">settings_overscanl</span>';
+        button_fs.innerHTML = '<span class="material-icons">settings_overscan</span>';
         
         fullscreen = false
     }else{
