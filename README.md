@@ -1,6 +1,7 @@
-# Jira Fullscreen Board
+# Jira Fullscreen Board - (Developer Mode)
 Brave & Chrome extension that allows you to fullscreen a Jira board.
 Workfs for both Scrum and Kanban boards.
+NOTE : This is still in developer mode, not available in chrome store
 
 ## Installation
 1. Clone or Download the repo to your local machine
