@@ -19,7 +19,7 @@ function init(){
     }else{
         h_board = document.getElementById("ghx-work").style.height;
         var button_fs = document.createElement("BUTTON"); 
-        button_fs.innerHTML = '<span class="material-icons">open_in_full</span>';
+        button_fs.innerHTML = '<span class="material-icons">settings_overscan</span>';
         button_fs.setAttribute("id", "button_fs");
         button_fs.setAttribute("class", "aui-button aui-button-primary");
         main.insertBefore(button_fs,main.childNodes[0]);
@@ -36,7 +36,7 @@ function toogle_fs(){
         document.getElementById("content").style.marginRight = "";
         document.getElementById("ghx-quick-filters").style.marginBottom = "";
         document.getElementById("ghx-work").style.height = h_board;
-        button_fs.innerHTML = '<span class="material-icons">open_in_full</span>';
+        button_fs.innerHTML = '<span class="material-icons">settings_overscanl</span>';
         
         fullscreen = false
     }else{
@@ -46,7 +46,7 @@ function toogle_fs(){
         document.getElementById("content").style.marginRight = "2px";
         document.getElementById("ghx-quick-filters").style.marginBottom = "0px";
         document.getElementById("ghx-work").style.height = "1000px";
-        button_fs.innerHTML = '<span class="material-icons">close_fullscreen</span>';
+        button_fs.innerHTML = '<span class="material-icons">cancel_presentation</span>';
         fullscreen = true;
     }
 }
