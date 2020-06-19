@@ -14,7 +14,7 @@ function init(){
     var main = document.getElementById("ghx-quick-filters").childNodes[0];
     if(main === null || main == undefined ){
         ms = 500
-        console.warn("JIRA FULLSCREEN : Not loaded yet, trying in "+ms+" mileseconds");
+        console.log("JIRA FULLSCREEN : Not loaded yet, trying in "+ms+" mileseconds");
         setTimeout(init,ms);
     }else{
         h_board = document.getElementById("ghx-work").style.height;
@@ -32,8 +32,8 @@ function toogle_fs(){
     if(fullscreen){
         document.getElementById("ghx-header").style.display = "";
         document.getElementById("navigation-app").style.display = "";
-        document.getElementById("content").style.marginLeft = "";
-        document.getElementById("content").style.marginRight = "";
+        document.getElementById("content").style.margin = "";
+        document.getElementById("content").style.borderTop = "";
         document.getElementById("ghx-quick-filters").style.marginBottom = "";
         document.getElementById("ghx-work").style.height = h_board;
         button_fs.innerHTML = '<span class="material-icons">settings_overscan</span>';
@@ -42,10 +42,10 @@ function toogle_fs(){
     }else{
         document.getElementById("ghx-header").style.display = "none";
         document.getElementById("navigation-app").style.display = "none";
-        document.getElementById("content").style.marginLeft = "2px";
-        document.getElementById("content").style.marginRight = "2px";
+        document.getElementById("content").style.margin = "2px";
+        document.getElementById("content").style.borderTop = "2px";
         document.getElementById("ghx-quick-filters").style.marginBottom = "0px";
-        document.getElementById("ghx-work").style.height = "1000px";
+        document.getElementById("ghx-work").style.height = window.innerHeight + "px";
         button_fs.innerHTML = '<span class="material-icons">cancel_presentation</span>';
         fullscreen = true;
     }
