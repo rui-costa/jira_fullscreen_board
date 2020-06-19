@@ -8,5 +8,8 @@
           "run_at": "document_end",
           "js": ["extension.js"]
         }
-      ]
+      ],
+      "icons": { "18": "icon.png",
+        "48": "icon.png",
+       "128": "icon.png" }
   }
