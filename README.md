@@ -1,6 +1,7 @@
 # Jira Fullscreen Board
 Browser extension that allows you to fullscreen a Jira board.
-Workfs for both Scrum and Kanban boards.
+
+Works for both Scrum and Kanban boards.
 
 ## Installation
 - [Firefox](https://addons.mozilla.org/en-GB/firefox/addon/full-screen-jira-board/)
