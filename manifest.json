@@ -1,7 +1,9 @@
 {
     "manifest_version": 2,
-    "version": "0.20.619",
-    "name": "Full Screen Jira Board",
+    "version": "1.20.622",
+    "name": "Full-Screen agile board mode for Jira",
+    "author":"Rui Costa",
+    "homepage_url": "https://github.com/rui-costa/jira_fullscreen_board",
     "content_scripts": [
         {
           "matches": ["https://*.atlassian.net/secure/RapidBoard.jspa*"],
@@ -9,7 +11,7 @@
           "js": ["extension.js"]
         }
       ],
-      "icons": { "18": "icon.png",
-        "48": "icon.png",
-       "128": "icon.png" }
+      "icons": { "16": "icon16.png",
+        "48": "icon48.png",
+       "128": "icon128.png" }
   }
