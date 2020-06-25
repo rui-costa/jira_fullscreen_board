@@ -22,6 +22,7 @@ function init(){
         button_fs.innerHTML = '<span class="material-icons">settings_overscan</span>';
         button_fs.setAttribute("id", "button_fs");
         button_fs.setAttribute("class", "aui-button aui-button-primary");
+        button_fs.setAttribute("title", "Fullscreen");
         main.insertBefore(button_fs,main.childNodes[0]);
         document.getElementById("button_fs").addEventListener("click", toogle_fs);
         document.getElementById("button_fs").style.marginRight = "10px";
