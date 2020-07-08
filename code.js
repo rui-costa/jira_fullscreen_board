@@ -1,61 +1,75 @@
-const version  = '0.20.0706'
+const version = '0.20.0708'
+const link = document.createElement('link')
 
-const buttonFS = function () {
+let hBoard = ''
 
+const ButtonFS = function ButtonFS() {
     this.element = document.createElement('BUTTON')
     this.element.setAttribute('id', 'button_fs')
     this.element.setAttribute('class', 'aui-button aui-button-primary')
     this.element.style.float = 'left'
     this.element.style.margin = '4px 8px 0px 0px'
     this.element.innerHTML = '<span class="material-icons">settings_overscan</span>'
-    this.element.addEventListener('click', toogle)
+    this.element.addEventListener('click', () => {
+        if (this.clicked) {
+            document.getElementById('ghx-header').style.display = ''
+            document.getElementById('navigation-app').style.display = ''
+            document.getElementById('content').style.margin = ''
+            document.getElementById('content').style.borderTop = ''
+            document.getElementById('ghx-quick-filters').style.marginBottom = ''
+            document.getElementById('ghx-work').style.height = hBoard
+        } else {
+            document.getElementById('ghx-header').style.display = 'none'
+            document.getElementById('navigation-app').style.display = 'none'
+            document.getElementById('content').style.margin = '2px'
+            document.getElementById('content').style.borderTop = '2px'
+            document.getElementById('ghx-quick-filters').style.marginBottom = '0px'
+            document.getElementById('ghx-work').style.height = `${window.innerHeight}px`
+        }
 
-    this.getElement = function () {
+        this.click()
+    })
+
+    this.getElement = function getElement() {
         return this.element
     }
 
     this.clicked = false
 
-    this.toogle = function () {
+    this.click = function click() {
         if (this.clicked) {
-            '<span class="material-icons">settings_overscan</span>'
             this.clicked = false
+            this.element.innerHTML = '<span class="material-icons">settings_overscan</span>'
         } else {
-            '<span class="material-icons">cancel_presentation</span>'
             this.clicked = true
+            this.element.innerHTML = '<span class="material-icons">cancel_presentation</span>'
         }
-
     }
 }
 
-const link = document.createElement('link')
-
-let button = new buttonFS()
-let hBoard = ''
+const button = new ButtonFS()
 
 function init() {
-    fullscreen = false
+    const main = document.querySelector('#ghx-quick-filters')
 
-    let main = document.querySelector('#ghx-quick-filters')
-
-    if (main === null || main == undefined) {
+    if (main === null || main === undefined) {
         // try again in 500ms
-        let ms = 1000
+        const ms = 1000
         setTimeout(init, ms)
     } else {
-
         link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons'
         link.type = 'text/css'
         link.rel = 'stylesheet'
         link.media = 'screen,print'
         document.getElementsByTagName('head')[0].appendChild(link)
 
-        console.log(`FSAB4JIRA : Full-Screen agile board mode for Jira`)
+        // eslint-disable-next-line no-console
+        console.log('FSAB4JIRA : Full-Screen agile board mode for Jira')
+        // eslint-disable-next-line no-console
         console.log(`FSAB4JIRA : Loading version ${version}`)
 
-        //Observe for modifications of content when navigating pages
-        const observer = new MutationObserver(function () {
-
+        // NOTE: Observe for modifications of content when navigating pages
+        const observer = new MutationObserver(() => {
             if (document.querySelector('#button_fs') === null || document.querySelector('#button_fs') === undefined) {
                 main.insertBefore(button.getElement(), main.childNodes[0])
             }
@@ -64,31 +78,7 @@ function init() {
 
         // initiliaze
         hBoard = document.getElementById('ghx-work').style.height
-
     }
-}
-
-function toogle() {
-
-    if (button.clicked) {
-        document.getElementById('ghx-header').style.display = ''
-        document.getElementById('navigation-app').style.display = ''
-        document.getElementById('content').style.margin = ''
-        document.getElementById('content').style.borderTop = ''
-        document.getElementById('ghx-quick-filters').style.marginBottom = ''
-        document.getElementById('ghx-work').style.height = hBoard
-        fullscreen = false
-    } else {
-        document.getElementById('ghx-header').style.display = 'none'
-        document.getElementById('navigation-app').style.display = 'none'
-        document.getElementById('content').style.margin = '2px'
-        document.getElementById('content').style.borderTop = '2px'
-        document.getElementById('ghx-quick-filters').style.marginBottom = '0px'
-        document.getElementById('ghx-work').style.height = window.innerHeight + 'px'
-        fullscreen = true
-    }
-
-    button.toogle()
 }
 
 init()

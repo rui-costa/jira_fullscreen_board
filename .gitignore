@@ -1,3 +1,5 @@
 # All zip files are not part of the project
 .zip
 
+# All node modules
+node_modules
